@@ -54,7 +54,7 @@ if test $notifyOnChangeLast -eq 1; test "$lastResult" != ""; then
 fi
 
 # searching for the most recent of old scans when such a change occured (if set so). saving timestamps of last changes in extra line
-if test $notifyOnChangeComparison -eq 1; then
+if test $notifyOnChangeLast -eq 1 && test $notifyOnChangeComparison -eq 1; then
 	unixstampSecAgo=$(( $unixstamp-1 ))
 	oldUnixstamp=$(( $unixstamp-$compareAge ))
 	changes=($( grep "|" "$resultsPath"/$hostToCheck/$unixstamp.pclog ))
