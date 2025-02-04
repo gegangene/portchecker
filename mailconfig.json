@@ -1,0 +1,9 @@
+{
+	"sender_domain": "",
+	"sender_login": "your-proper-email@someprovider.com",
+	"sender_password": "your-proper-password",
+	"sender_server": "mailserveraddress.given-by.someprovider.com",
+	"sender_port": 465,
+	"sender_ssl": 1,
+	"recipient_addresses": ["can+be+one+string@gmail.com","if-you-need-you-can-expand-the-lis-as-you-wish@mail.ru"]
+}
