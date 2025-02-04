@@ -26,17 +26,17 @@ the `initialise.sh` script will be invoked every time the schedule in crontable 
 ## operation and features
 the script `portchecker.sh` is invoked by cron every interval defined in the `rescan_every` value in the configuration file. if you don't use cron, the interval at which a script runs is up to you.
 
-you can specify the `host`, the list of `ports` you want to scan and the state of the `ports` to focus on. the scan results will be stored in the `results_path`/`host` directory which you can also define (by default it is set as the project directory).
+you can specify the `host`, the list of `ports` you want to scan and the `state` of the ports to focus on. the scan results will be stored in the `results_path`/`host` directory which you can also define (by default it is set as the project directory).
 
 > [!IMPORTANT]
 > the script needs to have permissions to read and write in the `results_path` directory.
 
-the scan results are named according to the convention `unixstamp_on_star_of_scan.pclog`.
+the scan results are named according to the convention `unixstamp_on_start_of_scan.pclog`.
 
 you can use the value of `notify_on_change_last` to specify whether you want to be notified only if there has been a change since the last scan, or every time.
 
 > [!IMPORTANT]
-> when comparison is enabled, the scan results file will have an extra line to indicate changes within ports, e.g. `c|f80` if port 80 has changed from open to filtered. this can be useful for administrators to effectively track port changes while keeping the mailbox clean.
+> when comparison is enabled, the scan results file will have an extra line to indicate changes within ports, e.g. `o|f80` if port 80 has changed from open to filtered. this can be useful for administrators to effectively track port changes while keeping the mailbox clean.
 
 the script also has the ability to find the same port state changes in previous records and store the previous state change unixstamp with the results. this can be useful for troubleshooting and pattern detection
 
